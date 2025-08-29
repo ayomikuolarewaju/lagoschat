@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getUser } from "@/actions/action";
 
-type SuccessProps = {
+interface SuccessProps  {
   params: Promise<{ id: string }>
 };
 
@@ -20,7 +20,7 @@ const Success = async({params}:SuccessProps)=>{
             <p className="text-gray-700 mb-6">Welcome {user?.name ?? "Guest"} 🎉.</p>
             <p className="text-gray-700 my-10">{user?.message}</p>
             <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <Link href="/" className="text-blue-500 hover:underline">Go back to home</Link>
+            <Link href="/" className="text-blue-500 hover:underline hover:text-green-700 hover:underline-offset-5">Go back to home</Link>
             </div>
           </div>
         </div>
