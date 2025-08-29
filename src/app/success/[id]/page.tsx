@@ -3,8 +3,14 @@
 import Link from "next/link";
 import { getUser } from "@/actions/action";
 
+type SuccessProps = {
+  params: {
+    id: string;
+  };
+};
 
-const Success = async({params}:string)=>{
+
+const Success = async({params}:SuccessProps)=>{
 
 
  
