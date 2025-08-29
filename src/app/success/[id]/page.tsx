@@ -1,15 +1,12 @@
 
+
 import Link from "next/link";
 import { getUser } from "@/actions/action";
 
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
+const Success = async({params}:string)=>{
 
-const Success = async({ params}:PageProps)=>{
+
  
   console.log(params.id)
   const user = await getUser(params.id)
