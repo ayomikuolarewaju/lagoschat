@@ -1,21 +1,15 @@
-
-
 import Link from "next/link";
 import { getUser } from "@/actions/action";
 
 type SuccessProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>
 };
 
 
 const Success = async({params}:SuccessProps)=>{
 
-
- 
-  console.log(params.id)
-  const user = await getUser(params.id)
+  const {id} = await params
+  const user = await getUser(id)
       
   console.log(user)
 
