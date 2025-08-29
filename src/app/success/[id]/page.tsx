@@ -3,7 +3,13 @@ import Link from "next/link";
 import { getUser } from "@/actions/action";
 
 
-const Success = async({ params }: { params: { id: string } })=>{
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
+const Success = async({ params}:PageProps)=>{
  
   console.log(params.id)
   const user = await getUser(params.id)
