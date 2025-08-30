@@ -2,12 +2,13 @@ import Link from "next/link";
 import { getUser } from "@/actions/action";
 
 interface SuccessProps  {
-  params: { id: string }
+  params: Promise<{ id: string }>
 };
 
 
-const Success = async({params : {id}}:SuccessProps)=>{
+const Success = async({params}:SuccessProps)=>{
 
+  const {id} = await params;
   const user = await getUser(id)
 
 
