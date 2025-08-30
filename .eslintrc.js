@@ -8,3 +8,8 @@ module.exports = {
   },
   ignorePatterns: ["src/generated/**"], // ignore generated
 };
+
+module.exports = {
+  extends: ["next", "next/core-web-vitals"],
+  ignorePatterns: ["src/generated/**", "prisma/**"],
+};
