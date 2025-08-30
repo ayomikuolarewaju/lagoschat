@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["next", "next/core-web-vitals"],
+  ignorePatterns: ["node_modules/", ".next/", "out/", "src/generated/**", "prisma/**"],
   rules: {
     "@typescript-eslint/no-require-imports": "off",
     "@typescript-eslint/no-unused-vars": "off",
@@ -12,4 +13,7 @@ module.exports = {
 module.exports = {
   extends: ["next", "next/core-web-vitals"],
   ignorePatterns: ["src/generated/**", "prisma/**"],
+  rules: {
+    // your custom rules here
+  },
 };
