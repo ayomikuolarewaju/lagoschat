@@ -2,16 +2,14 @@ import Link from "next/link";
 import { getUser } from "@/actions/action";
 
 interface SuccessProps  {
-  params: Promise<{ id: string }>
+  params: { id: string }
 };
 
 
-const Success = async({params}:SuccessProps)=>{
+const Success = async({params : {id}}:SuccessProps)=>{
 
-  const {id} = await params
   const user = await getUser(id)
-      
-  console.log(user)
+
 
     return (
         <div className="flex flex-col justify-center items-center h-screen bg-gray-100">

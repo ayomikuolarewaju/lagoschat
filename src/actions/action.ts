@@ -52,7 +52,6 @@ import { prisma } from "@/actions/db";
           }
         })
          
-    
 
     console.log('Form submitted successfully');
 
@@ -68,11 +67,11 @@ import { prisma } from "@/actions/db";
   }
 
 
-  export async function getUser(id:string | string[] | undefined){
+  export async function getUser(id:string){
     try {
 
       if (!id) return null;
-      const userId = Array.isArray(id) ? id[0] : id;
+      const userId =  id;
       const user = await prisma.user.findUnique({
         where: {
           id: userId,
