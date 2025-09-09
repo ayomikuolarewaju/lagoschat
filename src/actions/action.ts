@@ -40,8 +40,8 @@ import { prisma } from "@/actions/db";
     }
   
      const res = await client.chat.completions.create({
-        messages: [{ role: 'user', content: ` ${name}. ${location}. write a short business description of ${location}` }],
-        model: 'llama3-8b-8192',
+        messages: [{ role: 'user', content: ` ${name}. ${location}. write a short business description, high density retail opportunities,      demographics analysis, foot traffic, and competitor insights of ${location}.`}],
+        model: 'openai/gpt-oss-20b',
         });
         const data = await prisma.user.create({
           data: {

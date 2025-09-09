@@ -16,10 +16,10 @@ export function middleware(request: NextRequest) {
 
      return response 
   }
-     return NextResponse.redirect(new URL('/', request.url))
+     return NextResponse.redirect(new URL('/info', request.url))
   
 }
  
 export const config = {
-  matcher: '/success',
+  matcher: '/success/[id]',
 }
